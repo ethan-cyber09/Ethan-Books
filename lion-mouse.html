@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Lion & The Mouse 🦁🐭 | Story Time!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sky-blue: #aeddfa;
+      --savanna-gold: #ffc65c;
+      --lion-orange: #ff7f50;
+      --jungle-green: #4caf50;
+      --deep-jungle: #2e7d32;
+      --mouse-brown: #8d6e63;
+      --text-color: #333;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(135deg, var(--sky-blue) 0%, #e0f2f1 100%);
+      margin: 0;
+      padding: 0;
+      color: var(--text-color);
+      line-height: 1.8;
+    }
+
+    .story-container {
+      max-width: 900px;
+      margin: 50px auto;
+      background: #ffffff;
+      padding: 60px 50px;
+      border-radius: 40px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      border: 8px solid #ffffff; 
+      position: relative;
+    }
+
+    .story-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      color: var(--lion-orange);
+      text-shadow: 2px 2px 0px #ffffff, 4px 4px 0px rgba(255,127,80,0.3);
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+
+    /* --- MAGICAL LOOPING PICTURE CSS --- */
+    .picture-frame {
+      position: relative;
+      width: 100%;
+      border-radius: 25px;
+      overflow: hidden; /* Keeps the zoom inside the box */
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .lion-mouse-pic {
+      width: 100%;
+      height: auto;
+      display: block;
+      /* The breathing loop animation */
+      animation: breathe 8s ease-in-out infinite;
+    }
+
+    /* Keyframes for the picture slowly zooming in and out */
+    @keyframes breathe {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+
+    /* Floating Leaves Overlay */
+    .leaf {
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0.8;
+      z-index: 10;
+      /* The falling loop animation */
+      animation: fall linear infinite;
+    }
+
+    .leaf-1 { top: -10%; left: 10%; animation-duration: 12s; animation-delay: 0s; }
+    .leaf-2 { top: -10%; left: 80%; animation-duration: 15s; animation-delay: 3s; font-size: 1.5rem; }
+    .leaf-3 { top: -10%; left: 40%; animation-duration: 10s; animation-delay: 6s; font-size: 2.5rem; }
+
+    /* Keyframes for falling leaves */
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.8; }
+      90% { opacity: 0.8; }
+      100% { transform: translateY(500px) rotate(360deg); opacity: 0; }
+    }
+    /* ----------------------------------- */
+
+    .story-body p {
+      font-size: 1.3rem;
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .story-body p:first-of-type::first-letter {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--jungle-green);
+      float: left;
+      margin-right: 10px;
+      line-height: 1;
+    }
+
+    .lion-word { color: var(--lion-orange); font-weight: 700; }
+    .mouse-word { color: var(--mouse-brown); font-weight: 700; }
+
+    .inline-pic {
+      font-size: 3rem;
+      display: block;
+      text-align: center;
+      margin: 30px 0;
+      /* Makes the emojis bounce! */
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .divider {
+      height: 6px;
+      background: linear-gradient(90deg, transparent, var(--deep-jungle), transparent);
+      margin: 40px 0;
+      border-radius: 3px;
+    }
+
+    .moral-box {
+      background: var(--jungle-green);
+      color: white;
+      padding: 30px;
+      border-radius: 25px;
+      margin-top: 50px;
+      border: 6px solid #aed581;
+    }
+
+    .moral-title {
+      font-size: 1.8rem;
+      font-weight: 900;
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 50px;
+      padding: 15px 30px;
+      background: #8d6e63;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      border-bottom: 5px solid #5d4037;
+      transition: all 0.2s ease;
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .back-btn:hover {
+      background: #795548;
+      transform: translateX(-50%) translateY(2px);
+      border-bottom-width: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="story-container">
+    
+    <header class="story-header">
+      <h1>The Lion & The Mouse</h1>
+      
+      <div class="picture-frame">
+        <span class="leaf leaf-1">🍃</span>
+        <span class="leaf leaf-2">🍂</span>
+        <span class="leaf leaf-3">🍃</span>
+        
+        <img src="lion-mouse.png.png" alt="A huge lion and a tiny mouse in the jungle" class="lion-mouse-pic">
+      </div>
+
+    </header>
+
+    <div class="story-body">
+      <p>Deep in the heart of the Emerald Jungle, where the trees grew so tall they scraped the clouds, lived a magnificent <span class="lion-word">lion</span> named Rex. Rex was the undisputed King of the Jungle. He had a mane like a blazing sun and a roar that could shake the coconuts right out of the palm trees.</p>
+
+      <p>But on this particular Tuesday, Rex wasn't roaring. He was fast asleep after a giant lunch, snoring loudly under the cool shade of a giant banyan tree. *Zzz-snort! Zzz-snort!*</p>
+
+      <span class="inline-pic">🐭🌾💨</span>
+
+      <p>Nearby, a tiny, scatterbrained field <span class="mouse-word">mouse</span> named Pip was frantically searching for blackberries. Pip was always in a hurry and never looked where he was going. He scurried through the tall, tickly grass, his nose twitching. *Sniff, sniff, sniff.*</p>
+
+      <p>Suddenly, Pip tripped over a large, fuzzy root. He tumbled head over heels and landed—*SPLAT!*—right smack on the tip of the sleeping <span class="lion-word">lion’s</span> nose!</p>
+
+      <div class="divider"></div>
+
+      <p>Rex’s golden eyes snapped open. He let out a furious roar that sent flocks of parrots flying into the sky. With one lightning-fast move, he slammed his giant, heavy paw down, trapping poor little Pip by his tail.</p>
+
+      <span class="inline-pic">🐾😠</span>
+
+      <p>"How DARE you wake the King of the Jungle?" Rex growled, his voice rumbling like an earthquake. He opened his massive jaws, showing rows of sharp, white teeth. "I think you will make a perfect little afternoon snack."</p>
+
+      <p>"Wait! Please, oh please, Your Royal Majesty!" squeaked Pip. "I am so sorry! I am just a clumsy little <span class="mouse-word">mouse</span>. If you find it in your great, big heart to let me go, I promise I will never forget it. And who knows? Someday, I might even be able to help you in return!"</p>
+
+      <p>Rex stopped. He stared at the trembling speck of a <span class="mouse-word">mouse</span>. Then, a low chuckle started in his belly and erupted into a booming belly laugh. "You? A speck of fuzz? Help the mighty King of the Jungle? That is the funniest joke I have ever heard!"</p>
+
+      <span class="inline-pic">😂💛🦁</span>
+
+      <p>He lifted his heavy paw. "Go on then, little comedian. I am too amused to eat you today. But watch where you walk!"</p>
+
+      <div class="divider"></div>
+
+      <p>A few weeks passed. Rex was patrolling his kingdom when he smelled something strange. Before he could turn around, *SNAP!* A hunter’s trap sprang from the bushes. Thick, heavy ropes made of tough vines dropped from the trees, tangling the great <span class="lion-word">lion</span> in a massive net.</p>
+
+      <span class="inline-pic">🕸️😣</span>
+
+      <p>Rex fought with all his mighty strength, but the harder he struggled, the tighter the heavy ropes pulled around him. Finally, exhausted and terrified, Rex let out a long, mournful roar of defeat.</p>
+
+      <p>Miles away, little Pip was munching on a blackberry when he heard the sound. "That’s Rex!" Pip gasped. He dropped his berry and ran faster than he had ever run in his life until he found the trapped king.</p>
+
+      <p>"Don't worry, Your Majesty! I've got this!" Pip chirped, scrambling up the side of the net. He found the thickest knot and began to chew. *Nibble, gnaw, chew, crunch!*</p>
+
+      <span class="inline-pic">🐭🦷➰</span>
+
+      <p>Pip worked tirelessly for an hour. Finally, with a loud *SNAP*, the main rope broke! The net unraveled, and Rex tumbled out, free at last.</p>
+
+      <p>The giant <span class="lion-word">lion</span> shook out his beautiful mane and looked down at the tiny, exhausted <span class="mouse-word">mouse</span>. He gently nudged Pip with his nose. "Thank you, my little friend," Rex said softly. "You were right. I will never underestimate anyone because of their size again."</p>
+
+      <div class="moral-box">
+        <h3 class="moral-title">🌟 The Moral of the Story 🌟</h3>
+        <p style="text-align: center; margin-bottom: 0;">Kindness is never wasted, and even the smallest friend can be the biggest help!</p>
+      </div>
+
+    </div>
+
+    <a href="Storieslist.html.html" class="back-btn">⬅ Back to the Library</a>
+
+  </div>
+
+</body>
+</html>

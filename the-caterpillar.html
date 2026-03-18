@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Caterpillar 🐛 | Poetry Corner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Chewy&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Bug Garden Color Palette */
+      --leaf-green: #78e08f;
+      --dark-green: #009432;
+      --bug-brown: #833471;
+      --fuzzy-orange: #f0932b;
+      --butterfly-pink: #fd79a8;
+      --butterfly-purple: #a29bfe;
+      --sun-yellow: #f9ca24;
+      --text-dark: #2f3640;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 50px 20px;
+      color: var(--text-dark);
+      line-height: 1.8;
+      /* Soft sunny garden background */
+      background: linear-gradient(135deg, #e8f8f5 0%, #b8e994 100%);
+      overflow-x: hidden; 
+    }
+
+    /* Fluttering Background Butterflies */
+    .bg-butterfly {
+      position: absolute;
+      font-size: 4rem;
+      z-index: -1;
+      animation: flutter-by linear infinite;
+    }
+    
+    .b1 { top: 15%; left: -10%; animation-duration: 15s; }
+    .b2 { top: 50%; left: -10%; animation-duration: 22s; animation-delay: 4s; font-size: 5rem; }
+    .b3 { top: 80%; left: -10%; animation-duration: 18s; animation-delay: 8s; font-size: 3rem; transform: scaleX(-1); }
+
+    /* The butterflies fly across the screen and bob up and down */
+    @keyframes flutter-by {
+      0% { transform: translate(0, 0) rotate(-10deg); opacity: 0; }
+      10% { opacity: 0.6; }
+      25% { transform: translate(30vw, -30px) rotate(10deg); }
+      50% { transform: translate(60vw, 20px) rotate(-10deg); }
+      75% { transform: translate(90vw, -20px) rotate(10deg); }
+      90% { opacity: 0.6; }
+      100% { transform: translate(120vw, 0) rotate(-10deg); opacity: 0; }
+    }
+
+    .poem-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 50px 40px;
+      border-radius: 40px;
+      /* Super thick and bouncy orange border */
+      border: 15px solid var(--fuzzy-orange);
+      box-shadow: 0 20px 0px #e17055, 0 30px 40px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    h1 {
+      font-family: 'Chewy', cursive;
+      text-align: center;
+      font-size: 4.5rem;
+      margin-top: 0;
+      margin-bottom: 5px;
+      color: var(--dark-green);
+      letter-spacing: 2px;
+      text-shadow: 3px 3px 0px var(--leaf-green), 6px 6px 0px #badc58;
+    }
+
+    .author {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--bug-brown);
+      text-align: center;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* --- THE INCHWORM PICTURE FRAME! --- */
+    .crawling-frame {
+      display: block;
+      margin: 0 auto 40px auto;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 50px;
+      border: 10px solid var(--dark-green);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+      /* The Magic Inchworm Squish Animation */
+      animation: inchworm-crawl 3s ease-in-out infinite;
+    }
+
+    @keyframes inchworm-crawl {
+      0%, 100% { transform: scaleX(1) scaleY(1); }
+      30% { transform: scaleX(1.1) scaleY(0.9) translateX(10px); }
+      60% { transform: scaleX(0.9) scaleY(1.1) translateX(20px); }
+      80% { transform: scaleX(1) scaleY(1) translateX(0px); }
+    }
+    /* --------------------------------- */
+
+    .poem-body {
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-align: center;
+      color: var(--text-dark);
+      background: #fff8e7;
+      padding: 40px;
+      border-radius: 30px;
+      border: 5px dashed var(--bug-brown);
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+    }
+
+    .stanza {
+      margin-bottom: 15px;
+    }
+
+    .stanza p {
+      margin: 8px 0;
+    }
+
+    /* Colorful Keywords inside the poem */
+    .highlight-furry { color: var(--fuzzy-orange); font-weight: 900; font-family: 'Chewy', cursive; font-size: 2.2rem; }
+    .highlight-green { color: var(--dark-green); font-weight: 900; }
+    
+    /* Magic Butterfly Word Animation */
+    .highlight-butterfly { 
+      font-family: 'Chewy', cursive; 
+      font-size: 2.5rem; 
+      background: linear-gradient(to right, var(--butterfly-pink), var(--butterfly-purple), var(--sun-yellow));
+      -webkit-background-clip: text;
+      color: transparent;
+      display: inline-block; 
+      animation: flutter-word 2s infinite alternate; 
+    }
+
+    @keyframes flutter-word {
+      0% { transform: translateY(0) rotate(-5deg) scale(1); }
+      100% { transform: translateY(-5px) rotate(5deg) scale(1.1); }
+    }
+
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 40px auto 0 auto;
+      padding: 15px 40px;
+      background: var(--dark-green);
+      color: #fff;
+      font-family: 'Chewy', cursive;
+      font-size: 1.8rem;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border-bottom: 8px solid #006266;
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+    }
+
+    .back-btn:hover {
+      background: #006266;
+      transform: translateY(4px);
+      border-bottom-width: 4px;
+    }
+
+    /* Bouncing emojis next to the title */
+    .title-emoji {
+      display: inline-block;
+      animation: super-bounce 1.5s infinite alternate;
+    }
+
+    @keyframes super-bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="bg-butterfly b1">🦋</div>
+  <div class="bg-butterfly b2">🦋</div>
+  <div class="bg-butterfly b3">🦋</div>
+
+  <div class="poem-card">
+    
+    <header>
+      <h1><span class="title-emoji">🐛</span> The Caterpillar <span class="title-emoji">🐛</span></h1>
+      <p class="author">By Christina Rossetti</p>
+    </header>
+
+    <img src="caterpillar.png.png" alt="A fuzzy caterpillar on a green leaf" class="crawling-frame">
+
+    <div class="poem-body">
+      
+      <div class="stanza">
+        <p>Brown and <span class="highlight-furry">furry</span></p>
+        <p>Caterpillar in a hurry,</p>
+        <p>Take your walk</p>
+        <p>To the shady <span class="highlight-green">leaf</span>, or stalk,</p>
+        <p>Or what not,</p>
+        <p>Which may be the chosen spot.</p>
+        <p>No toad spy you,</p>
+        <p>Hovering bird of prey pass by you;</p>
+        <p>Spin and die,</p>
+        <p>To live again a <span class="highlight-butterfly">butterfly!</span></p>
+      </div>
+
+    </div>
+
+    <a href="PoemorStories.html" class="back-btn">⬅ Back to Poetry Corner</a>
+
+  </div>
+
+</body>
+</html>

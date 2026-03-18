@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World of Stories 2025-2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Lora:italic,wght@0,400;1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Super Fun & Colorful Kids Palette */
+      --fun-red: #ff4757;
+      --fun-blue: #1e90ff;
+      --fun-green: #2ed573;
+      --fun-yellow: #ffa502;
+      --fun-purple: #9b59b6;
+      /* Cotton Candy Background Gradient */
+      --bg-gradient: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); 
+      --card-bg: #ffffff;
+      --soft-gray: #f1f2f6;
+      --text-color: #2f3542;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-gradient);
+      margin: 0;
+      padding: 50px 20px;
+      color: var(--text-color);
+      line-height: 1.7;
+    }
+
+    .story-card {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 60px;
+      border-radius: 35px; /* Rounder edges for a friendlier look */
+      box-shadow: 0 15px 45px rgba(0,0,0,0.1);
+      border-top: 15px solid var(--fun-blue);
+      border-bottom: 15px solid var(--fun-yellow);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .story-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 55px rgba(30, 144, 255, 0.2);
+    }
+
+    h1 {
+      color: var(--fun-red);
+      text-align: center;
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 3px 3px 0px var(--fun-yellow); /* Fun 3D text effect */
+    }
+
+    .intro {
+      font-family: 'Lora', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--fun-purple);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .divider {
+      border: none;
+      height: 4px;
+      background: linear-gradient(to right, transparent, var(--fun-blue), var(--fun-green), var(--fun-yellow), transparent);
+      margin: 40px 0;
+      border-radius: 2px;
+    }
+
+    .section-title {
+      color: var(--text-color);
+      font-size: 1.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+      display: block;
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 20px; /* Space between buttons */
+      align-items: center;
+    }
+
+    li {
+      margin: 0;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.2rem;
+      padding: 18px 30px;
+      background: var(--soft-gray);
+      border-radius: 20px;
+      display: block; /* Makes the whole box clickable */
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    /* Specific Button Colors */
+    .story-btn {
+      color: var(--fun-purple);
+      border-left: 10px solid var(--fun-purple);
+    }
+
+    .poem-btn {
+      color: var(--fun-green);
+      border-left: 10px solid var(--fun-green);
+    }
+
+    .nav-link:hover {
+      transform: translateY(-5px) scale(1.05);
+      color: white;
+    }
+
+    .story-btn:hover {
+      background: var(--fun-purple);
+      box-shadow: 0 10px 20px rgba(155, 89, 182, 0.4);
+    }
+
+    .poem-btn:hover {
+      background: var(--fun-green);
+      box-shadow: 0 10px 20px rgba(46, 213, 115, 0.4);
+    }
+
+    .welcome-msg {
+      background: var(--fun-yellow);
+      padding: 15px 30px;
+      border-radius: 20px;
+      display: inline-block;
+      font-weight: 900;
+      color: #ffffff;
+      font-size: 1.4rem;
+      margin-top: 15px;
+      text-align: center;
+      box-sizing: border-box;
+      box-shadow: 0 5px 15px rgba(255, 165, 2, 0.4);
+      /* Makes the greeting bounce! */
+      animation: bounce 2s infinite ease-in-out;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .text-center p {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-color);
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: var(--fun-blue);
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.1rem;
+      border-radius: 15px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border-bottom: 5px solid #0984e3;
+    }
+
+    .back-btn:hover {
+      background: #0984e3;
+      transform: translateY(2px);
+      border-bottom-width: 3px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #a4b0be;
+      margin-top: 50px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="story-card">
+    <header>
+      <h1>World of Stories!</h1>
+      <p class="intro"><em>Academic Year 2025 - 2026</em></p>
+    </header>
+
+    <div class="divider"></div>
+
+    <section class="text-center">
+      <p>
+        Welcome to my Page where we read with Fun. 🎈<br>
+        These stories are made for ages 5 - 12 years old.
+      </p>
+      <div class="welcome-msg">Hi, hello, mabuhay! 👋</div>
+    </section>
+
+    <div class="divider"></div>
+
+    <nav>
+      <span class="section-title">Library</span>
+      <ul>
+        <li><a href="Storieslist.html.html" class="nav-link story-btn">📚 Click for a Magical Story!</a></li>
+        
+        <li><a href="PoemorStories.html" class="nav-link poem-btn">🎨 Click to read Fun Poems!</a></li>
+      </ul>
+    </nav>
+
+    <div class="divider"></div>
+
+    <div class="text-center">
+      <a href="storyhead.html" class="back-btn">⬅ Back to Portfolio</a>
+    </div>
+
+    <footer>
+      Created by Ethan | Keep Reading! 📖
+    </footer>
+  </div>
+
+</body>
+</html>

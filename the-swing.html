@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Swing 🌳 | Poetry Corner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Chewy&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Sunny Park Color Palette */
+      --sky-blue: #00a8ff;
+      --cloud-white: #f5f6fa;
+      --grass-green: #4cd137;
+      --sun-yellow: #fbc531;
+      --wood-brown: #c23616;
+      --text-dark: #2f3640;
+      --fun-pink: #e84118;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 50px 20px;
+      color: var(--text-dark);
+      line-height: 1.8;
+      /* Sky Blue gradient background */
+      background: linear-gradient(180deg, #74b9ff 0%, #81ecec 100%);
+      overflow-x: hidden; /* Keeps drifting clouds from making a scrollbar */
+    }
+
+    /* Drifting Background Clouds */
+    .bg-cloud {
+      position: absolute;
+      color: white;
+      font-size: 5rem;
+      opacity: 0.6;
+      z-index: -1;
+      animation: drift-cloud linear infinite;
+    }
+    .c1 { top: 5%; left: -20%; animation-duration: 20s; }
+    .c2 { top: 20%; left: -20%; animation-duration: 25s; animation-delay: 5s; font-size: 7rem; }
+    .c3 { top: 40%; left: -20%; animation-duration: 18s; animation-delay: 10s; }
+
+    @keyframes drift-cloud {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(120vw); }
+    }
+
+    .poem-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 50px 40px;
+      border-radius: 40px;
+      /* Super thick and bouncy green border */
+      border: 15px solid var(--grass-green);
+      box-shadow: 0 20px 0px #44bd32, 0 30px 40px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    h1 {
+      font-family: 'Chewy', cursive;
+      text-align: center;
+      font-size: 4.5rem;
+      margin-top: 0;
+      margin-bottom: 5px;
+      color: var(--sky-blue);
+      letter-spacing: 2px;
+      text-shadow: 3px 3px 0px var(--sun-yellow), 6px 6px 0px #0097e6;
+    }
+
+    .author {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--wood-brown);
+      text-align: center;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* --- THE SWINGING PICTURE FRAME! --- */
+    .swinging-frame {
+      display: block;
+      margin: 0 auto 40px auto;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 30px;
+      border: 10px solid var(--sun-yellow);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+      /* The Magic Swing Animation */
+      transform-origin: top center; /* Makes it swing from the top, like a real swing! */
+      animation: swing-pic 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes swing-pic {
+      0% { transform: rotate(-8deg); }
+      100% { transform: rotate(8deg); }
+    }
+    /* --------------------------------- */
+
+    .poem-body {
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-align: center;
+      color: var(--text-dark);
+      background: #f1f2f6;
+      padding: 40px;
+      border-radius: 30px;
+      border: 5px dashed var(--sky-blue);
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+    }
+
+    .stanza {
+      margin-bottom: 30px;
+    }
+
+    .stanza p {
+      margin: 5px 0;
+    }
+
+    /* Colorful Keywords inside the poem */
+    .highlight-blue { color: var(--sky-blue); font-weight: 900; font-size: 1.8rem; }
+    .highlight-green { color: var(--grass-green); font-weight: 900; font-size: 1.8rem; }
+    .highlight-up { color: var(--fun-pink); font-family: 'Chewy', cursive; font-size: 2.2rem; display: inline-block; animation: pop-up 2s infinite alternate; }
+
+    @keyframes pop-up {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-5px); }
+    }
+
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 40px auto 0 auto;
+      padding: 15px 40px;
+      background: var(--fun-pink);
+      color: #fff;
+      font-family: 'Chewy', cursive;
+      font-size: 1.8rem;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border-bottom: 8px solid #c23616;
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+    }
+
+    .back-btn:hover {
+      background: #c23616;
+      transform: translateY(4px);
+      border-bottom-width: 4px;
+    }
+
+    /* Bouncing emojis next to the title */
+    .title-emoji {
+      display: inline-block;
+      animation: super-bounce 1.5s infinite alternate;
+    }
+
+    @keyframes super-bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-15px); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="bg-cloud c1">☁️</div>
+  <div class="bg-cloud c2">☁️</div>
+  <div class="bg-cloud c3">☁️</div>
+
+  <div class="poem-card">
+    
+    <header>
+      <h1><span class="title-emoji">🍃</span> The Swing <span class="title-emoji">🍃</span></h1>
+      <p class="author">By Robert Louis Stevenson</p>
+    </header>
+
+    <img src="the-swing.png.png" alt="A child swinging high in the air" class="swinging-frame">
+
+    <div class="poem-body">
+      
+      <div class="stanza">
+        <p>How do you like to go <span class="highlight-up">up</span> in a swing,</p>
+        <p><span class="highlight-up">Up</span> in the air so <span class="highlight-blue">blue?</span></p>
+        <p>Oh, I do think it the pleasantest thing</p>
+        <p>Ever a child can do!</p>
+      </div>
+
+      <div class="stanza">
+        <p><span class="highlight-up">Up</span> in the air and over the wall,</p>
+        <p>Till I can see so wide,</p>
+        <p>Rivers and trees and cattle and all</p>
+        <p>Over the countryside—</p>
+      </div>
+
+      <div class="stanza">
+        <p>Till I look down on the garden <span class="highlight-green">green,</span></p>
+        <p>Down on the roof so brown—</p>
+        <p><span class="highlight-up">Up</span> in the air I go flying again,</p>
+        <p><span class="highlight-up">Up</span> in the air and down!</p>
+      </div>
+
+    </div>
+
+    <a href="PoemorStories.html" class="back-btn">⬅ Back to Poetry Corner</a>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Star Money ⭐🪙 | Story Time!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Magical Night Sky Color Palette */
+      --night-blue: #130f40;
+      --star-gold: #f9ca24;
+      --silver-coin: #dcdde1;
+      --magic-purple: #686de0;
+      --soft-yellow: #f6e58d;
+      --text-color: #2f3542;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      /* Deep night gradient */
+      background: linear-gradient(135deg, #2c2c54 0%, #474787 100%);
+      margin: 0;
+      padding: 0;
+      color: var(--text-color);
+      line-height: 1.8;
+    }
+
+    .story-container {
+      max-width: 900px;
+      margin: 50px auto;
+      background: #ffffff;
+      padding: 60px 50px;
+      border-radius: 40px;
+      box-shadow: 0 15px 40px rgba(249, 202, 36, 0.3);
+      border: 8px solid #ffffff; 
+      position: relative;
+    }
+
+    .story-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      color: var(--magic-purple);
+      text-shadow: 2px 2px 0px #ffffff, 4px 4px 0px rgba(104, 109, 224, 0.3);
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+
+    /* --- MAGICAL LOOPING PICTURE CSS --- */
+    .picture-frame {
+      position: relative;
+      width: 100%;
+      border-radius: 25px;
+      overflow: hidden; 
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      background-color: var(--night-blue);
+      /* Glowing border animation */
+      animation: pulse-glow 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 10px 25px rgba(0,0,0,0.3), 0 0 10px var(--star-gold); }
+      50% { box-shadow: 0 10px 25px rgba(0,0,0,0.3), 0 0 40px var(--star-gold); }
+      100% { box-shadow: 0 10px 25px rgba(0,0,0,0.3), 0 0 10px var(--star-gold); }
+    }
+
+    .star-pic {
+      width: 100%;
+      height: auto;
+      display: block;
+      /* Slow zoom animation */
+      animation: slow-zoom 15s ease-in-out infinite;
+    }
+
+    @keyframes slow-zoom {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* Falling Stars Overlay */
+    .falling-star {
+      position: absolute;
+      font-size: 2.5rem;
+      z-index: 10;
+      animation: fall-down linear infinite;
+    }
+
+    .star-1 { top: -20%; left: 15%; animation-duration: 5s; animation-delay: 0s; }
+    .star-2 { top: -20%; left: 50%; animation-duration: 7s; animation-delay: 2s; font-size: 1.8rem; }
+    .star-3 { top: -20%; left: 85%; animation-duration: 6s; animation-delay: 4s; font-size: 3rem; }
+
+    /* Keyframes for stars falling into coins */
+    @keyframes fall-down {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; content: "⭐"; }
+      20% { opacity: 1; content: "⭐"; }
+      70% { content: "🪙"; opacity: 1;}
+      100% { transform: translateY(600px) rotate(360deg); opacity: 0; content: "🪙"; }
+    }
+    /* ----------------------------------- */
+
+    .story-body p {
+      font-size: 1.3rem;
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .story-body p:first-of-type::first-letter {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--star-gold);
+      float: left;
+      margin-right: 10px;
+      line-height: 1;
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+    }
+
+    /* Colorful Keywords */
+    .girl-word { color: var(--magic-purple); font-weight: 800; }
+    .star-word { color: var(--star-gold); font-weight: 900; }
+    .coin-word { color: #7f8fa6; font-weight: 800; }
+
+    .inline-pic {
+      font-size: 3rem;
+      display: block;
+      text-align: center;
+      margin: 30px 0;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .divider {
+      height: 6px;
+      background: linear-gradient(90deg, transparent, var(--star-gold), transparent);
+      margin: 40px 0;
+      border-radius: 3px;
+    }
+
+    .moral-box {
+      background: var(--night-blue);
+      color: white;
+      padding: 30px;
+      border-radius: 25px;
+      margin-top: 50px;
+      border: 6px solid var(--star-gold);
+      position: relative;
+    }
+
+    .moral-title {
+      font-size: 1.8rem;
+      font-weight: 900;
+      text-align: center;
+      margin-top: 0;
+      color: var(--star-gold);
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 50px;
+      padding: 15px 30px;
+      background: var(--magic-purple);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      border-bottom: 5px solid #4834d4;
+      transition: all 0.2s ease;
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .back-btn:hover {
+      background: #4834d4;
+      transform: translateX(-50%) translateY(2px);
+      border-bottom-width: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="story-container">
+    
+    <header class="story-header">
+      <h1>The Star Money</h1>
+      
+      <div class="picture-frame">
+        <span class="falling-star star-1">⭐</span>
+        <span class="falling-star star-2">⭐</span>
+        <span class="falling-star star-3">⭐</span>
+        
+        <img src="star-money.png.png" alt="A little girl in the forest catching stars that turn into money" class="star-pic">
+      </div>
+
+    </header>
+
+    <div class="story-body">
+      <p>Once upon a time, in a small village nestled by the edge of a great, dark forest, lived a little <span class="girl-word">girl</span> named Elara. Elara had faced more sorrow than any child should. Her mother and father had passed away, leaving her entirely alone in the world.</p>
+
+      <p>In fact, Elara had nothing left in the entire world except the ragged dress she was wearing, a thin shawl around her shoulders, and a small crust of bread in her hand, which a kind-hearted baker had given her that very morning. But despite her terrible luck, Elara had a heart of pure gold.</p>
+
+      <span class="inline-pic">👧🍞❤️</span>
+
+      <p>She trusted that the universe would take care of her, so she bravely set off down the dusty road, hoping to find a new place to call home. As she walked, the wind began to blow, carrying a chill. Beside the road, she saw an old, frail man sitting on a stump. He looked incredibly miserable.</p>
+
+      <p>"Ah, little <span class="girl-word">girl</span>," the old man sighed, his voice weak. "I have not eaten in three days. I am so terribly hungry. Please, can you spare a crumb to eat?"</p>
+
+      <div class="divider"></div>
+
+      <p>Elara looked at her crust of bread. It was the only food she had, and she was very hungry herself. But seeing the old man's desperate eyes, she didn't hesitate. She handed him the entire piece of bread. "May it bring you strength," she smiled gently, and continued on her way.</p>
+
+      <span class="inline-pic">👴🤝🍞</span>
+
+      <p>A mile further down the road, she heard the sound of soft crying. Sitting in the dirt was a little boy. His lips were blue from the cold. "I am freezing," the child wept, rubbing his bare ears. "My head is so cold."</p>
+
+      <p>Elara immediately took off her woolen shawl and wrapped it securely around the little boy's head and shoulders. "There now, you will be warm," she said, before walking on.</p>
+
+      <p>As the sun began to dip below the horizon, the air grew freezing cold. She met a little <span class="girl-word">girl</span> who was shivering violently because she had no coat. Elara, without a second thought, took off her own jacket and gave it to the girl.</p>
+
+      <div class="divider"></div>
+
+      <p>Finally, she reached the edge of the dark, quiet forest. It was nighttime now, pitch black and freezing. There, huddled under a tree, was a fourth child who was crying bitterly because he didn't even have a shirt to wear.</p>
+
+      <span class="inline-pic">🥶🌲👗</span>
+
+      <p>The good little <span class="girl-word">girl</span> wrapped her arms around herself to stay warm and thought, "It is the middle of the night. It is completely dark, and no one can see me. I can give away my shirt, too." So, she took off her worn-out shirt and handed it to the freezing child.</p>
+
+      <p>Now, Elara stood alone in the dark forest. She was freezing, hungry, and had absolutely nothing left to her name. She looked up at the night sky, ready to accept whatever happened to her next.</p>
+
+      <span class="inline-pic">🌃✨🌌</span>
+
+      <p>Suddenly, a brilliant flash of light lit up the forest! The <span class="star-word">stars</span> in the sky began to detach themselves from the darkness. They rained down from the heavens like a glittering waterfall, and as they hit the soft forest floor, they didn't burn out. Instead, they clinked together, turning into shining, solid, heavy silver <span class="coin-word">coins</span>!</p>
+
+      <p>Elara gasped in amazement. She looked down at herself and realized she was no longer shivering. By some wonderful magic, she was suddenly wearing a brand new, beautifully sewn dress made of the finest, softest, warmest linen she had ever felt.</p>
+
+      <div class="divider"></div>
+
+      <p>Laughing with joy, Elara used the skirt of her beautiful new dress to gather up the hundreds of heavy silver <span class="coin-word">coins</span>. She walked out of the forest that night and bought a beautiful home, never having to go hungry or cold for the rest of her long, happy life.</p>
+
+      <div class="moral-box">
+        <h3 class="moral-title">🌟 The Moral of the Story 🌟</h3>
+        <p style="text-align: center; margin-bottom: 0;">True, selfless kindness is a magic of its own, and it is always rewarded in the end.</p>
+      </div>
+
+    </div>
+
+    <a href="Storieslist.html.html" class="back-btn">⬅ Back to the Library</a>
+
+  </div>
+
+</body>
+</html>

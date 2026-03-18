@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Boy Who Cried Wolf 👦🐺 | Story Time!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Hillside & Village Color Palette */
+      --sky-blue: #70a1ff;
+      --grass-green: #7bed9f;
+      --dark-green: #2ed573;
+      --wolf-gray: #57606f;
+      --danger-red: #ff4757;
+      --sheep-white: #f1f2f6;
+      --text-color: #2f3542;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      /* Soft Sky to Grass Gradient */
+      background: linear-gradient(135deg, #dff9fb 0%, #c7ecee 100%);
+      margin: 0;
+      padding: 0;
+      color: var(--text-color);
+      line-height: 1.8;
+    }
+
+    .story-container {
+      max-width: 900px;
+      margin: 50px auto;
+      background: #ffffff;
+      padding: 60px 50px;
+      border-radius: 40px;
+      box-shadow: 0 15px 40px rgba(46, 213, 115, 0.2);
+      border: 8px solid #ffffff; 
+      position: relative;
+    }
+
+    .story-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      color: var(--sky-blue);
+      text-shadow: 2px 2px 0px #ffffff, 4px 4px 0px rgba(112, 161, 255, 0.4);
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+
+    /* --- MAGICAL LOOPING PICTURE CSS --- */
+    .picture-frame {
+      position: relative;
+      width: 100%;
+      border-radius: 25px;
+      overflow: hidden; 
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      background-color: var(--sky-blue);
+    }
+
+    .boy-pic {
+      width: 100%;
+      height: auto;
+      display: block;
+      /* The slow panning animation to look around the hills */
+      animation: pan-hills 12s ease-in-out infinite;
+      transform: scale(1.1); /* Zoomed in slightly to allow panning */
+    }
+
+    /* Keyframes for the picture slowly panning left and right */
+    @keyframes pan-hills {
+      0% { transform: scale(1.1) translateX(0px); }
+      33% { transform: scale(1.1) translateX(-15px); }
+      66% { transform: scale(1.1) translateX(15px); }
+      100% { transform: scale(1.1) translateX(0px); }
+    }
+
+    /* Floating Clouds Overlay */
+    .cloud {
+      position: absolute;
+      font-size: 3rem;
+      opacity: 0.8;
+      z-index: 10;
+      /* The drifting cloud loop animation */
+      animation: drift linear infinite;
+    }
+
+    .cloud-1 { top: 5%; left: -20%; animation-duration: 18s; animation-delay: 0s; }
+    .cloud-2 { top: 15%; left: -20%; animation-duration: 25s; animation-delay: 8s; font-size: 2rem; }
+    .cloud-3 { top: 2%; left: -20%; animation-duration: 20s; animation-delay: 15s; font-size: 4rem; }
+
+    /* Keyframes for clouds drifting across the screen */
+    @keyframes drift {
+      0% { transform: translateX(0); opacity: 0; }
+      10% { opacity: 0.9; }
+      90% { opacity: 0.9; }
+      100% { transform: translateX(1100px); opacity: 0; }
+    }
+    /* ----------------------------------- */
+
+    .story-body p {
+      font-size: 1.3rem;
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .story-body p:first-of-type::first-letter {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--sky-blue);
+      float: left;
+      margin-right: 10px;
+      line-height: 1;
+    }
+
+    /* Colorful Keywords */
+    .boy-word { color: var(--sky-blue); font-weight: 800; }
+    .wolf-word { color: var(--danger-red); font-weight: 900; font-size: 1.4rem; }
+    .sheep-word { color: #a4b0be; font-weight: 800; }
+
+    .inline-pic {
+      font-size: 3rem;
+      display: block;
+      text-align: center;
+      margin: 30px 0;
+      /* Bouncing emojis */
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .divider {
+      height: 6px;
+      background: linear-gradient(90deg, transparent, var(--dark-green), transparent);
+      margin: 40px 0;
+      border-radius: 3px;
+    }
+
+    .moral-box {
+      background: var(--dark-green);
+      color: white;
+      padding: 30px;
+      border-radius: 25px;
+      margin-top: 50px;
+      border: 6px solid var(--grass-green);
+      position: relative;
+    }
+
+    .moral-title {
+      font-size: 1.8rem;
+      font-weight: 900;
+      text-align: center;
+      margin-top: 0;
+      color: #ffffff;
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 50px;
+      padding: 15px 30px;
+      background: var(--sky-blue);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      border-bottom: 5px solid #1e90ff;
+      transition: all 0.2s ease;
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .back-btn:hover {
+      background: #1e90ff;
+      transform: translateX(-50%) translateY(2px);
+      border-bottom-width: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="story-container">
+    
+    <header class="story-header">
+      <h1>The Boy Who Cried Wolf</h1>
+      
+      <div class="picture-frame">
+        <span class="cloud cloud-1">☁️</span>
+        <span class="cloud cloud-2">☁️</span>
+        <span class="cloud cloud-3">☁️</span>
+        
+        <img src="boy-wolf.png.png" alt="A shepherd boy on a hill looking down at the village" class="boy-pic">
+      </div>
+
+    </header>
+
+    <div class="story-body">
+      <p>High up on a grassy hillside, overlooking a quiet little village, a young shepherd <span class="boy-word">boy</span> named Leo sat on a rock. Leo had exactly one job: keep an eye on his master's flock of fluffy, white <span class="sheep-word">sheep</span> and make sure no wild animals came out of the dark pine forest to eat them.</p>
+
+      <p>It was, without a doubt, the most boring job in the world. </p>
+
+      <span class="inline-pic">👦🐑🥱</span>
+
+      <p>The <span class="sheep-word">sheep</span> didn't do anything exciting. They just stood there, chewing grass. *Munch, munch, baa.* Leo tried talking to his sheepdog, Barnaby, but Barnaby just wagged his tail and went back to sleep in the sun. Leo tried carving sticks, whistling tunes, and counting the clouds, but the day dragged on and on.</p>
+
+      <p>"I need some excitement," Leo thought, a mischievous grin spreading across his face. "I want to see people running and shouting!"</p>
+
+      <div class="divider"></div>
+
+      <p>Leo stood up, cupped his hands around his mouth, took a massive breath, and screamed toward the village below: "<span class="wolf-word">WOLF!</span> <span class="wolf-word">WOLF!</span> HELP! A HUGE <span class="wolf-word">WOLF</span> IS ATTACKING THE SHEEP!"</p>
+
+      <span class="inline-pic">🏃‍♂️💨😱</span>
+
+      <p>Down in the village, the blacksmith dropped his hammer. The baker dropped his dough. The farmers grabbed their pitchforks and heavy walking sticks. "Leo is in trouble!" they shouted. The whole village abandoned their chores and ran panting and puffing all the way up the steep hill to save the boy and the flock.</p>
+
+      <p>When they reached the top, sweaty and out of breath, they looked around frantically. "Where is the <span class="wolf-word">wolf</span>?!" cried the blacksmith.</p>
+
+      <p>Leo couldn't hold it in anymore. He fell backward onto the grass, clutching his stomach, howling with laughter. "You should have seen your faces!" Leo gasped. "There is no <span class="wolf-word">wolf</span>! It was just a joke!"</p>
+
+      <span class="inline-pic">😂🤦‍♂️😡</span>
+
+      <p>The villagers were not amused. Their faces turned red with anger. "A wild animal attack is not a joke, Leo!" the baker scolded severely. "Do not cry '<span class="wolf-word">wolf</span>' when there is no wolf!" Grumbling and wiping sweat from their foreheads, the villagers trudged all the way back down the hill.</p>
+
+      <div class="divider"></div>
+
+      <p>Three days later, Leo was bored again. The memory of the angry, running villagers was just too funny to resist. So, he stood on his rock and yelled again. "<span class="wolf-word">WOLF!</span> <span class="wolf-word">WOLF!</span> PLEASE HELP ME! HE'S GOT A SHEEP!"</p>
+
+      <p>Once again, the villagers rushed up the hill, terrified for the boy's safety. And once again, they found Leo laughing hysterically at them. This time, the village elder stepped forward, pointing a shaking finger at the boy. "Save your shouting for when you really need it," he warned, his voice dark and serious. "If you keep lying, nobody will ever believe a word you say."</p>
+
+      <span class="inline-pic">🌇🐺👀</span>
+
+      <p>Late that afternoon, the sun began to set, casting long, spooky shadows across the hillside. The air grew cold. Suddenly, Barnaby the dog began to growl, the fur on his back standing straight up. Leo heard a twig snap. He turned around, and his heart leaped into his throat.</p>
+
+      <p>Creeping out of the dark pine forest was a massive, terrifying <span class="wolf-word">wolf</span>. Its yellow eyes locked onto a plump little lamb, and it bared its razor-sharp teeth.</p>
+
+      <div class="divider"></div>
+
+      <p>Leo was frozen with pure terror. He scrambled to the highest rock, his voice cracking with panic. "<span class="wolf-word">WOLF!</span> <span class="wolf-word">WOLF!</span>" he screamed at the top of his lungs. "HELP! IT'S A REAL <span class="wolf-word">WOLF</span>! PLEASE, SOMEBODY HELP ME!"</p>
+
+      <span class="inline-pic">🚫🙉🤷‍♂️</span>
+
+      <p>Down in the village, the baker heard the screams. He shook his head and went back to kneading his dough. "It's just that silly boy trying to trick us again," he said.</p>
+
+      <p>The blacksmith heard the screams too. "I won't be fooled a third time," he muttered, striking his anvil.</p>
+
+      <p>Leo screamed until his throat was completely raw, but nobody came. The village simply ignored him. Leo had to watch helplessly as the <span class="wolf-word">wolf</span> chased the <span class="sheep-word">sheep</span> away into the dark forest, scattering the flock completely. When the villagers finally came up the next morning, they found Leo sitting alone on his rock, crying bitterly.</p>
+
+      <div class="moral-box">
+        <h3 class="moral-title">🌟 The Moral of the Story 🌟</h3>
+        <p style="text-align: center; margin-bottom: 0;">A liar will not be believed, even when he is telling the absolute truth.</p>
+      </div>
+
+    </div>
+
+    <a href="Storieslist.html.html" class="back-btn">⬅ Back to the Library</a>
+
+  </div>
+
+</body>
+</html>
