@@ -3,10 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profile | Ethan Macapagal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #800000 0%, #4a0000 100%);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 700px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        h1 {
+            font-style: italic;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .subtitle {
+            color: #ff00ff; /* Fuchsia */
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 30px auto;
+            width: 80%;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 4px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        .about-text {
+            color: #ffd1dc; /* Soft pink */
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            color: #ffd1dc;
+            font-size: 0.95rem;
+        }
+
+        .contact-info strong {
+            color: white;
+        }
+
+        /* Fixed the missing dot here! */
+        .section-title { 
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            margin-top: 40px;
+            display: block;
+        }
+
+        /* New Button Styles */
+        .btn-Stories {
+            display: inline-block;
+            margin: 30px auto 10px;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #ff00ff, #800000);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-radius: 50px; /* Pill shape */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 5px 15px rgba(255, 0, 255, 0.4);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-Stories:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 0, 255, 0.6);
+            background: rgba(255, 255, 255, 0.05); /* Makes it slightly transparent on hover */
+            border: 2px solid #ff00ff;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Ethan's Books</h1>
-    <p>This is the main entry point of the Ethan Books project.</p>
+
+    <div class="container">
+        <header>
+            <h1>Ethan Malazarte Macapagal</h1>
+            <div class="subtitle">Grade 11 TVL Student • LOURDES COLLEGE INC.</div>
+        </header>
+
+        <img src="Tantan.jpeg.jpeg" alt="Ethan's Portrait" class="profile-img">
+
+        <main>
+            <b class="section-title">About Me</b>
+            <p class="about-text">
+                I am a dedicated Senior High School student enrolled in the TVL strand.
+                I pride myself on my work ethic and commitment to every project I take on.
+                Beyond my studies, I am a lifelong learner with a passion for reading and
+                discovering new skills.
+            </p>
+
+            <hr>
+
+            <a href="storiesPage.Html" class="btn-Stories">Kids Stories</a>
+
+            <hr>
+
+            <div class="contact-info">
+                <b class="section-title">Let's Connect</b>
+                <p>
+                    <strong>✉</strong> ethan.macapagal@lccdo.edu.ph<br>
+                    <strong>📞</strong> 09362249825
+                </p>
+            </div>
+        </main>
+    </div>
+
 </body>
 </html>
